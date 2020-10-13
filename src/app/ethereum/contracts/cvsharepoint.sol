@@ -13,8 +13,12 @@ contract CvSharepoint {
   string[] public ipfsCvAddresses;
   mapping(string => address) public cvToOwner;
 
+  modifier notUsed(string memory _ipfsAddress){
+    require(cvToOwner[_ipfsAddress] == address(0));
+    _;
+  }
 
-  function addCv(string memory _ipfsAddress) public {
+  function addCv(string memory _ipfsAddress) public notUsed(_ipfsAddress) {
     uint id = ipfsCvAddresses.push(_ipfsAddress) - 1;
     cvToOwner[_ipfsAddress] = msg.sender;
     emit CvAdded(id);
