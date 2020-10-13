@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add a new CV</h1>
+<div mat-dialog-content class="form-container">
+  <form [formGroup]="formGroup">
+    <mat-form-field class="full-width">
+      <mat-label>File</mat-label>
+      <input matInput formControlName="file">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="full-width">
+  <span class="action-bar-spacer"></span>
+  <button mat-flat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="addCv()" [disabled]="!formGroup.valid">Add</button>
+</div>

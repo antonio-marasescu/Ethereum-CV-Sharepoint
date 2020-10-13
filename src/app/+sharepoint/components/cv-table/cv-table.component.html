@@ -1,8 +1,10 @@
-<div>
-  <div *ngFor="let address of cvAddressList">
-    <br>
-    <div>Address: {{address.ipfsAddress}}</div>
-    <div>Owner: {{address.owner}}</div>
-    <br>
-  </div>
-</div>
+<table class="cv-table mat-elevation-z8" mat-table [dataSource]="cvAddressList" [trackBy]="trackCvById">
+
+  <ng-container *ngFor="let key of displayedColumns" matColumnDef="{{key}}">
+    <th mat-header-cell *matHeaderCellDef class="cv-table-item"> {{key}}</th>
+    <td mat-cell *matCellDef="let element" class="cv-table-item"> {{element[key]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
