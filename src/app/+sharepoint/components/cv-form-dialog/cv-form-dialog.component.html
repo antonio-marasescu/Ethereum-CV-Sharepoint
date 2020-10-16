@@ -1,13 +1,22 @@
 <h1 mat-dialog-title>Add a new CV</h1>
-<div mat-dialog-content class="form-container">
+<div mat-dialog-content class="full-width">
   <form [formGroup]="formGroup">
-    <mat-form-field class="full-width">
-      <mat-label>File</mat-label>
-      <input matInput formControlName="file">
-    </mat-form-field>
+    <ngx-file-drop dropZoneLabel="Add files here" (onFileDrop)="onFileAdded($event)">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        <button class="btn btn-primary" type="button" (click)="openFileSelector()">Browse Files</button>
+      </ng-template>
+    </ngx-file-drop>
+    <mat-list class="full-width top-padded" dense>
+      <h3 matSubheader>Uploaded File</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <div matLine>{{formGroup.get('file')?.value?.name}}</div>
+      </mat-list-item>
+    </mat-list>
   </form>
 </div>
-<div mat-dialog-actions class="full-width">
+<div mat-dialog-actions class="action-bar-container full-width top-padded">
+  <mat-divider></mat-divider>
   <span class="action-bar-spacer"></span>
   <button mat-flat-button (click)="cancel()">Cancel</button>
   <button mat-flat-button color="primary" (click)="addCv()" [disabled]="!formGroup.valid">Add</button>

@@ -26,10 +26,7 @@ export class SharepointCvService {
     this._contractNetworkAddress = CvSharepoint.networks[this.ethereumContractService.networkId].address;
     this._contract = new Contract(this._contractNetworkAddress, CvSharepoint.abi, this.ethereumContractService.signer);
     this._contract.on(EventsTypes.CvAdded, data => this.cvAddedEvent.next(data));
-    this.cvAddedEvent.asObservable().subscribe((id: BigNumber) => {
-      console.log(EventsTypes.CvAdded, id.toNumber());
-      this.getCvById(id.toNumber());
-    });
+    this.cvAddedEvent.asObservable().subscribe((id: BigNumber) => this.getCvById(id.toNumber()));
   }
 
   public getCvById(cvId: number): void {

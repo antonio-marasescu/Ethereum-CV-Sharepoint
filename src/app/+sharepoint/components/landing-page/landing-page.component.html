@@ -3,4 +3,4 @@
   <span class="navbar-spacer"></span>
   <button mat-flat-button (click)="addNewCv()">Add CV</button>
 </mat-toolbar>
-<app-cv-table [cvAddressList]="addressList$ | async"></app-cv-table>
+<app-cv-table [cvAddressList]="addressList$ | async" (getFile)="getFile($event)"></app-cv-table>

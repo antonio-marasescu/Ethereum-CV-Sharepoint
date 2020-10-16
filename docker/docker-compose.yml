@@ -1,0 +1,36 @@
+version: '3.7'
+# At the moment there are some issue for ipfs get/add (adds some random bytes at the beginning and end)
+services:
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    hostname: ipfs_host1
+    volumes:
+      - ipfs-volume-export:/export
+      - ipfs-volume-data:/data/ipfs
+    ports:
+      - 5001:5001
+      - 4001:4001
+      - 8080:8080
+  ganache-node:
+    image: trufflesuite/ganache-cli:latest
+    ports:
+      - 8545:8545
+    entrypoint:
+      - node
+      - ./ganache-core.docker.cli.js
+      - --deterministic
+      - --db=/ganache_data
+      - --mnemonic
+      - 'minimum symptom minute gloom tragic situate silver mechanic salad amused elite beef'
+      - --networkId
+      - '5777'
+      - --hostname
+      - '0.0.0.0'
+      - --debug
+    volumes:
+      - ganache_data-volume:/ganache_data
+
+volumes:
+  ganache_data-volume:
+  ipfs-volume-data:
+  ipfs-volume-export:

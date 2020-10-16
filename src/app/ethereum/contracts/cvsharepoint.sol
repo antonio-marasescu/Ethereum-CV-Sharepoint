@@ -13,7 +13,7 @@ contract CvSharepoint {
   string[] public ipfsCvAddresses;
   mapping(string => address) public cvToOwner;
 
-  modifier notUsed(string memory _ipfsAddress){
+  modifier notUsed(string memory _ipfsAddress) {
     require(cvToOwner[_ipfsAddress] == address(0));
     _;
   }
@@ -24,11 +24,11 @@ contract CvSharepoint {
     emit CvAdded(id);
   }
 
-  function getCvById(uint id) external view returns (CvModel memory){
+  function getCvById(uint id) external view returns (CvModel memory) {
     return CvModel(id, ipfsCvAddresses[id], cvToOwner[ipfsCvAddresses[id]]);
   }
 
-  function getCvModelList() external view returns (CvModel[] memory){
+  function getCvModelList() external view returns (CvModel[] memory) {
     CvModel[] memory models = new CvModel[](ipfsCvAddresses.length);
     for (uint i = 0; i < ipfsCvAddresses.length; i++) {
       models[i].id = i;

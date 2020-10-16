@@ -28,6 +28,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {NgxFileDropModule} from 'ngx-file-drop';
 
 @NgModule({
   declarations: [],
@@ -40,7 +41,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatDividerModule, MatIconModule, MatGridListModule, MatListModule, MatSidenavModule, MatDialogModule,
     MatToolbarModule, MatDatepickerModule, MatSelectModule, MatNativeDateModule, MatExpansionModule, MatStepperModule,
     MatChipsModule, MatBadgeModule, MatAutocompleteModule, MatProgressSpinnerModule, MatMenuModule, MatTabsModule,
-    MatTreeModule, MatProgressBarModule
+    MatTreeModule, MatProgressBarModule,
+    NgxFileDropModule
   ],
   exports: [
     CommonModule,
@@ -51,7 +53,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatDividerModule, MatIconModule, MatGridListModule, MatListModule, MatSidenavModule, MatDialogModule,
     MatToolbarModule, MatDatepickerModule, MatSelectModule, MatNativeDateModule, MatExpansionModule, MatStepperModule,
     MatChipsModule, MatBadgeModule, MatAutocompleteModule, MatProgressSpinnerModule, MatMenuModule, MatTabsModule,
-    MatTreeModule, MatProgressBarModule
+    MatTreeModule, MatProgressBarModule,
+    NgxFileDropModule
   ],
   providers: [],
 })
