@@ -7,11 +7,12 @@ files (in our case CV's) onto the blockchain. More specifically storing their ha
 - Docker
 
 ## Setup
-1. clone the repository `git clone https://github.com/antonio-marasescu/Ethereum-CV-Sharepoint.git`
-2. run `npm install`
-3. run `docker-compose up` in the `docker` folder
-4. run `npm run migrate --hard` to deploy and compile the contracts
-5. run `npm run ng` to start Angular
+-  clone the repository `git clone https://github.com/antonio-marasescu/Ethereum-CV-Sharepoint.git`
+-  run `npm install`
+-  run `docker-compose up` in the `docker` folder
+    - ganache accounts will be listed in the console terminal
+-  run `npm run migrate --hard` to deploy and compile the contracts
+-  run `npm run ng` to start the angular application
 
 ## For Issues regarding CORS when using IPFS on docker
 #### After `docker-compose` use in the container console the following commands:
