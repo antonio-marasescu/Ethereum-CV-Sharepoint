@@ -1,5 +1,5 @@
 version: '3.7'
-# At the moment there are some issue for ipfs get/add (adds some random bytes at the beginning and end)
+
 services:
   ipfs:
     image: ipfs/go-ipfs:latest
