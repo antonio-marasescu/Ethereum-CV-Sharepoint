@@ -1,5 +1,5 @@
 # Ethereum-CV-Sharepoint
-An introduction application to using Ethereum with Angular, Truffle, Ganache and IPFS. It will represent a sharepoint for saving and sharing 
+An introductory application to using Ethereum with Angular, Truffle, Ganache and IPFS. It will represent a sharepoint for saving and sharing 
 files (in our case CV's) onto the blockchain. More specifically storing their hash in the contract and saving the actual file onto IPFS.
 
 ## Prerequisites
