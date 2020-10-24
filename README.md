@@ -5,6 +5,7 @@ files (in our case CV's) onto the blockchain. More specifically storing their ha
 ## Prerequisites
 - Node.js
 - Docker
+- Metamask Extension
 
 ## Setup
 -  clone the repository `git clone https://github.com/antonio-marasescu/Ethereum-CV-Sharepoint.git`
